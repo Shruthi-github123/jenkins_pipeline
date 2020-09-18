@@ -1,18 +1,16 @@
 pipeline {
-	agent none
+	agent { label 'slave1' }
  
 	stages {
 		stage ('STAGE 1') {
-      		agent LABEL: slave1
 			steps {
-				echo 'This slave1 for ccode'
+				echo 'This is slaveforc node with STAGE 1'
 				sh 'sleep 10'
 			}	
 		}
 		stage ('STAGE 2') {
-     		agent LABEL: slave2
 			steps {
-				echo 'This slave2 for java'
+				echo 'This is slaveforjava with STAGE 2'
 				sh 'sleep 10'
 			}	
 		}
