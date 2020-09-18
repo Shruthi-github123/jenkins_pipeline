@@ -18,19 +18,6 @@ pipeline {
 				sh 'mvn clean install'
 			}	
 		}
-		stage ('STAGE 3') {
-			agent { label 'slave1' }
-			steps {
-				echo 'This is slaveforc with STAGE 3'
-				sh 'sleep 15'
-			}	
-		}
-		stage ('STAGE 4') {
-			agent { label 'master' }
-			steps {
-				echo 'This is master with STAGE 4'
-				sh 'sleep 15'
-			}	
-		}
+		
 	}
 }
