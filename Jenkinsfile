@@ -5,17 +5,17 @@ pipeline {
 		stage ('STAGE 1') {
 			agent { label 'slave1' }
 			steps {
-			
-				echo 'This is slave for ccode node with STAGE 1'
-				sh 'sleep 10'
+				git 'https://github.com/ranjitha-12345/ccode.git'
+				sh 'make'
+				
 			}	
 		}
 		stage ('STAGE 2') {
 			agent { label 'slave2' }
 			steps {
 			
-				echo 'This is slave for java with STAGE 2'
-				sh 'sleep 10'
+				git 'https://github.com/ranjitha-12345/Test-1.git'
+				sh 'mvn clean install'
 			}	
 		}
 		/*stage ('STAGE 3') {
