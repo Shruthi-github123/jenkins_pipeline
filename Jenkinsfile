@@ -17,12 +17,14 @@ pipeline {
 			}	
 		}
 		stage ('STAGE 3') {
+			agent { label 'slave1' }
 			steps {
 				echo 'This is slaveforc with STAGE 3'
 				sh 'sleep 5'
 			}	
 		}
 		stage ('STAGE 4') {
+			agent { label 'master' }
 			steps {
 				echo 'This is master with STAGE 4'
 				sh 'sleep 5'
