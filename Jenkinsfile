@@ -3,14 +3,14 @@ pipeline {
  
 	stages {
 		stage ('STAGE 1') {
-			agent LABEL: slave1
+			agent { label 'slave1' }
 			steps {
 				echo 'This is slave for ccode node with STAGE 1'
 				sh 'sleep 10'
 			}	
 		}
 		stage ('STAGE 2') {
-			agent LABEL: slave2
+			agent { label 'slave2' }
 			steps {
 				echo 'This is slave for java with STAGE 2'
 				sh 'sleep 10'
