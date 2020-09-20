@@ -2,7 +2,7 @@ pipeline {
 	agent none
  
 	stages {
-		stage ('make and maven') {
+		 
 			 
 				stage ('ccode') {
 					agent { label 'node1-c' }
@@ -21,7 +21,7 @@ pipeline {
 					}	
 				}
 			
-		}
+		
 		
 	 }
  }
