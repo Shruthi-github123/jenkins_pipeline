@@ -5,18 +5,18 @@ pipeline {
 		stage ('make and maven') {
 			parallel {
 				stage ('ccode') {
-					agent { label 'slave1' }
+					agent { label 'node1-c' }
 					steps {
-						git 'https://github.com/ranjitha-12345/ccode.git'
+						git 'https://github.com/Shruthi-github123/ccode.git'
 						sh 'make'
 				
 					}	
 				}
 				stage ('java') {
-					agent { label 'slave2' }
+					agent { label 'node2-maven' }
 					steps {
 			
-					git 'https://github.com/ranjitha-12345/Test-1.git'
+					git 'https://github.com/Shruthi-github123/Test-1.git'
 					sh 'mvn clean install'
 					}	
 				}
