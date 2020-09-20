@@ -2,6 +2,9 @@ pipeline {
 	agent none
  
 	stages {
+		stage ('make and maven') {
+			parallel {
+			
 		 
 			 
 				stage ('ccode') {
@@ -21,7 +24,8 @@ pipeline {
 					}	
 				}
 			
-		
+			}
+		}
 		
 	 }
  }
